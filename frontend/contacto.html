@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Tienda — Contacto</title>
+
+  <!-- Fuente moderna -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- ===== BARRA DE NAVEGACIÓN (NAVBAR) ===== -->
+  <header class="navbar">
+    <div class="contenedor nav-contenido">
+      <a href="index.html" class="logo"> Mi<strong>Tienda</strong></a>
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#productos">Productos</a>
+        <a href="contacto.html" class="activo">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main class="contenedor" id="contacto">
+    <div class="encabezado-principal">
+      <h1>Ponte en Contacto</h1>
+      <p>¿Tienes dudas o comentarios? Envíanos un mensaje y te responderemos pronto</p>
+    </div>
+
+    <div class="contenedor-contacto">
+      <!-- SECCIÓN 1: Formulario de Contacto -->
+      <section class="tarjeta" id="formularioSeccion">
+        <h2>Envíanos un Mensaje</h2>
+        <p class="subtitulo-contacto">
+          Diligencia los campos a continuación y te responderemos lo antes posible.
+        </p>
+
+        <!-- Mensaje de éxito visual -->
+        <div id="mensajeExito" class="mensaje-exito" role="alert">
+          ✓ ¡Mensaje enviado con éxito! Nos comunicaremos contigo pronto.
+        </div>
+
+        <form id="formularioContacto">
+          <div class="fila-contacto">
+            <div class="campo">
+              <label for="nombreContacto">Nombre completo:</label>
+              <input type="text" id="nombreContacto" name="nombre" placeholder="Ej: Juan Pérez" required />
+            </div>
+
+            <div class="campo">
+              <label for="correoContacto">Correo electrónico:</label>
+              <input type="email" id="correoContacto" name="email" placeholder="juan@ejemplo.com" required />
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="asuntoContacto">Asunto:</label>
+            <input type="text" id="asuntoContacto" name="asunto" placeholder="Ej: Consulta sobre disponibilidad de productos" required />
+          </div>
+
+          <div class="campo">
+            <label for="mensajeContacto">Mensaje:</label>
+            <textarea id="mensajeContacto" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          </div>
+
+          <div class="acciones-form">
+            <button type="submit" id="btnEnviarContacto" class="btn btn-guardar">Enviar Mensaje</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- SECCIÓN 2: Mensajes Recibidos (debajo de todo) -->
+      <section class="tarjeta" id="mensajesSeccion">
+        <div class="encabezado-seccion-mensajes">
+          <div>
+            <h2>Mensajes Registrados</h2>
+            <p class="subtitulo-contacto" style="margin-bottom: 0;">
+              Historial de mensajes enviados a través del formulario de contacto.
+            </p>
+          </div>
+          <div class="acciones-cabecera-mensajes">
+            <span id="contadorMensajes" class="contador-badge">0 mensajes</span>
+            <button type="button" id="btnVaciarMensajes" class="btn-vaciar-mensajes" title="Borrar todos los mensajes" style="display: none;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              </svg>
+              Borrar todos
+            </button>
+          </div>
+        </div>
+
+        <div id="listaMensajesContacto" class="lista-mensajes">
+          <!-- Los mensajes se cargarán dinámicamente con JavaScript -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA (FOOTER) ===== -->
+  <footer class="footer">
+    <div class="contenedor footer-contenido">
+      <p>&copy; 2026 Mi Tienda — Proyecto Formativo con Node.js, Express y MySQL.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
