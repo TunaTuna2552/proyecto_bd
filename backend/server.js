@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const conexion = require("./db"); // Importamos la conexión creada en db.js
@@ -147,6 +148,7 @@ app.delete("/contacto", (req, res) => {
 });
 
 // Iniciar servidor en el puerto 3000
-app.listen(3000, () => {
-  console.log(" Servidor ejecutándose en http://localhost:3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
 });
