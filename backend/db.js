@@ -14,7 +14,7 @@ const configuracion = {
     port,
     user,
     password,
-    database
+    database,
 };
 
 
