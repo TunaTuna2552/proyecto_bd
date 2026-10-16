@@ -27,7 +27,7 @@ if (host !== "localhost" && host !== "127.0.0.1") {
 }
 
 //Crear la conexión con MySQL o TiDB Cloud
-const conexion = mysql.createConexion(configuracion)
+const conexion = mysql.createConnection(configuracion);
 
 //Comprobamos si la conexió fue exitosa
 conexion.connect((error) => {
